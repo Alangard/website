@@ -1,0 +1,124 @@
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}}
+
+
+*{
+    padding: 0;
+    margin:0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #290000;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-page-link{
+    padding: 0;
+}
+
+.main-page-link img {
+    width: 55px;
+    height: 55px;
+    margin: 0 70px 0 50px;
+}
+
+.main-page-link img:hover {
+    animation:spin 1s linear 0s;
+}
+
+.menu, .journal-submenu {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.journal img {
+    width: 15px;
+    height: 15px;
+    padding-right: 5px;
+}
+
+nav li {
+    position: relative;
+}
+
+nav li:focus-within > .journal-submenu,
+nav li:hover > .journal-submenu {
+    display: flex;
+}
+
+nav a {
+    display: block;
+    color: #ffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-style: bold;
+    background-color: #290000;
+    padding: 20px;
+    white-space: nowrap;
+}
+
+nav li:hover > a, 
+nav a:not(:first-child):hover {
+    background-color:#DB282E;
+}
+
+nav a:not(:first-child):focus {
+    outline: none;
+    background-color:#DB282E;
+}
+
+.journal-submenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+}
+
+.header-account-bnts-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 55px;
+    width: 320px;
+    border-left: 3px solid #ffff;
+}
+
+.header-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 130px;
+    background-color: #290000;
+    border: 3px solid #ffff;
+    color: #ffff;
+    font-size: 24px;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.header-btn:hover{
+    cursor: pointer;
+    background-color:#DB282E;
+}
+
+.header-btn:focus{
+    outline: none;
+    background-color:#DB282E;
+}
+

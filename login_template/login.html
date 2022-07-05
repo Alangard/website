@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login & Sign up</title>
+    <link rel="stylesheet" href="../login_template/login.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-frame-container">
+        <div class="transition-container login-head-container">
+            <img class="logo-img" src="../source/logo.png" alt="logo-img">
+            <div class="login-head-container-visible-block"> </div>
+        </div>
+        <div class="transition-container login-frame">
+            <p>LOGIN</p>
+            <div class="field-container username-field-container">
+                <img class="user-icon" src="../source/user_icon.svg" alt="user_icon">
+                <input type="text" name="username" id="login-username-field" placeholder="Username">
+            </div>
+            <div class="field-container password-field-container">
+                <img class="pass-icon" src="../source/pass_icon.svg" alt="pass_icon">
+                <input type="password" name="password" id="login-pass-field" placeholder="Password">
+                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+            </div>
+            <div class="chekbox-container">
+                <input type="checkbox" name="remember-checkbox" id="login-remember-checkbox">
+                <label for="login-remember-checkbox">Remember me</label>
+            </div>
+            <button type="submit" class="login-btn">LOGIN</button>
+            <a class="signup-link" href="../signup_template/signup.html">Forgot Username / Pasword?</a>
+        </div>
+        <div class="transition-container login-foot-container">
+            <p class="sending-data-text">Sending data</p>
+        </div>
+    </div>
+    
+    <script>
+        function show_hide_password(target){
+            var input = document.getElementById('login-pass-field');
+            if (input.getAttribute('type') == 'password') {
+                target.classList.add('view');
+                input.setAttribute('type', 'text');
+            } else {
+                target.classList.remove('view');
+                input.setAttribute('type', 'password');
+            }
+            return false;
+        }
+
+
+
+        // Collapsing script
+        var transition_duration = '0.7'
+        var elements_list = document.querySelectorAll('.transition-container')
+
+        function after_collapse_animation(){
+            document.querySelector('.sending-data-text').style.display ='inline';
+            document.querySelector('.logo-img').classList.toggle('rotate-animation');}
+
+        for (var i = 0; i < elements_list.length; ++i) {
+                elements_list[i].style.transitionDuration = transition_duration + "s";}
+
+        document.querySelector('.login-btn').addEventListener('click', function() {
+            document.querySelector('.login-frame').classList.toggle('collapsed');
+            setTimeout(after_collapse_animation, parseFloat(transition_duration));});
+
+
+
+
+    </script>
+</body>
+</html>

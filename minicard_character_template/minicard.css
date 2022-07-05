@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    color: #290000;
+    font-weight: 300;
+}
+
+.minicard-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 5px;
+    height: 125px;
+    width: auto;
+    min-width: 325px;
+    background-color:rgba(217, 217, 217, 0.6);
+    border-radius: 10px;
+    border: 3px solid #290000;
+}
+
+.photo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:5px;
+}
+
+.character_photo{
+    height: 120px;
+    width: 100px;
+}
+
+.about-element{
+    z-index: 1;
+    position: absolute;
+    display: none;
+}
+
+.icon{
+    height: 25px;
+    width: 25px;
+}
+
+.add-element{
+    position: absolute;
+    display: none;
+    right: 10px;
+    top:30%;
+}
+
+.minicard-container:hover .add-element{
+    display: block;
+}
+
+.minicard-container:hover .about-element{
+    display: block;
+}
+
+.minicard-container:hover .character_photo{
+    opacity: 50%;
+}
+
+.characters-data{
+    display: flex;
+    width: auto;
+    min-width: 200px;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.characters-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+.alive-status-icon{
+    opacity: 50%;
+}
+
+.characters-name{
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.race-and-class-container, .brithdate-and-age-container, .birthplace{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 2px;
+}
